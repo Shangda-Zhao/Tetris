@@ -22,29 +22,47 @@
 通过上面第2步，可以很容易的产生板块。板块的产生可以由随机数控制，而板块的初始形状有 7 个，再利用矩阵的旋转，可以得到剩下的 21 个板块。
 
 ### 4. 判断板块是否可以左右移动和旋转
-ch=getch(); //从键盘接收
+```
+ ch=getch(); //从键盘接收
+ 
  switch(ch) //移动
  {
- case LEFT: if(panduan(n,space_c,x,y-1)==1) 
- { draw_kong(n,space_c,x,y);
- y--;
- }
-break;
- case RIGHT: if(panduan(n,space_c,x,y+1)==1) 
- { draw_kong(n,space_c,x,y);
- y++;
- }
-break;
- case DOWN: if(panduan(n,space_c,x+1,y)==1)
- { draw_kong(n,space_c,x,y);
- x++;
- }
-break;
- case SPACE: if(panduan(n,(space_c+1)%4,x+1,y)==1) 
- { draw_kong(n,space_c,x,y);
- space_c=(space_c+1)%4;
- }
-break;
+ case LEFT: if(panduan(n,space_c,x,y-1)==1){ 
+ 
+                draw_kong(n,space_c,x,y);
+                
+                y--;
+            }
+
+            break;
+            
+ case RIGHT: if(panduan(n,space_c,x,y+1)==1){ 
+             
+                 draw_kong(n,space_c,x,y);
+                 
+                 y++;
+             }
+
+             break;
+             
+ case DOWN: if(panduan(n,space_c,x+1,y)==1){ 
+            
+                draw_kong(n,space_c,x,y);
+                
+                x++;
+            }
+
+            break;
+ 
+ case SPACE: if(panduan(n,(space_c+1)%4,x+1,y)==1){ 
+                 
+                 draw_kong(n,space_c,x,y);
+ 
+                 space_c=(space_c+1)%4;
+             }
+             
+             break;
+```
 
 ### 5. 判断板块是否到底
 
@@ -66,7 +84,7 @@ break;
 
 ### 9. 游戏结束的判定
 
-即判断最顶上一行是否有方块。这一步也比较简单。
+即判断最顶上一行是否有方块。
 
 ### 10. 游戏结束界面的设计
 
@@ -76,33 +94,33 @@ break;
 
 ### 游戏进行过程中
 
-![进行](photo/ing.png)
+![进行](photo/ing.PNG)
 
 ### 选择退出 ESC 之后的界面
 
-![退出](photo/esc.png)
+![退出](photo/esc.PNG)
 
 ### 游戏结束后的界面
 
 **(1) 打破最高记录**
 
-![打破记录](photo/打破纪录.png)
+![打破记录](photo/打破纪录.PNG)
 
 **(2) 与最高记录持平**
 
-![持平](photo/持平.png)
+![持平](photo/持平.PNG)
 
 **(3) 没有达到最高纪录**
 
-![继续努力](photo/继续努力.png)
+![继续努力](photo/继续努力.PNG)
 
 ### 游戏结束之后，是否重新开始游戏
 
 **(1)  输入 y 之后，退出游戏**
 
-![退出](photo/退出.png)
+![退出](photo/退出.PNG)
 
 **(2) 当输入错误时**
 
-![输入错误](photo/输入错误.png)
+![输入错误](photo/输入错误.PNG)
 
